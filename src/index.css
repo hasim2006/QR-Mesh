@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --lego-bg: #F5F5F0;
+    --lego-card: #ffffff;
+    --lego-border: #2B2B2B;
+    --lego-text: #2B2B2B;
+    --lego-muted: #64748b;
+    --lego-stud-dark: rgba(0,0,0,0.1);
+    --lego-stud-light: rgba(255,255,255,0.8);
+  }
+  
+  .dark {
+    --lego-bg: #1a1a1a;
+    --lego-card: #2d2d2d;
+    --lego-border: #e5e5e5;
+    --lego-text: #f5f5f5;
+    --lego-muted: #94a3b8;
+    --lego-stud-dark: rgba(0,0,0,0.5);
+    --lego-stud-light: rgba(255,255,255,0.05);
+  }
+
+  body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: var(--lego-bg);
+    color: var(--lego-text);
+  }
+}
