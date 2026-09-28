@@ -90,7 +90,7 @@ flowchart TD
     A7 -. "Photons / Light across Air Gap" .-> B1
 
     subgraph RECEIVER["📱 Device B (Receiver)"]
-        B1["Microphone / Camera Samples Video Frame"] --> B2["Offscreen Canvas Frame Extraction"]
+        B1["Camera Captures Screen Frame"] --> B2["Offscreen Canvas Frame Extraction"]
         B2 --> B3["jsQR Real-Time QR Detector"]
         B3 --> B4["Header Parser: index | total | type | payload"]
         B4 --> B5["Unordered Chunk Hashmap Deduplicator"]
