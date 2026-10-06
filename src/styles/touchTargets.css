@@ -1,0 +1,5 @@
+@media (max-width: 640px) {
+  button {
+    min-height: 48px;
+  }
+}
