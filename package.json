@@ -1,6 +1,22 @@
 {
   "name": "qr-mesh",
   "version": "1.0.0",
+  "description": "Air-Gapped Optical Data Transfer via Animated QR Fountain Codes.",
+  "homepage": "https://qr-filemesh.netlify.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasim2006/QR-Mesh.git"
+  },
+  "keywords": [
+    "qr-mesh",
+    "optical-data-transfer",
+    "air-gapped",
+    "fountain-codes",
+    "animated-qr",
+    "react-19",
+    "typescript",
+    "pako-deflate"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
