@@ -1,6 +1,13 @@
 {
   "name": "QRMesh",
-  "description": "Send images with zero internet, using only light.",
-  "requestFramePermissions": ["camera"],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "Send files and media using only light. Zero internet, air-gapped optical data transfer.",
+  "homepage": "https://qr-filemesh.netlify.app/",
+  "repository": "https://github.com/hasim2006/QR-Mesh",
+  "liveUrl": "https://qr-filemesh.netlify.app/",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
