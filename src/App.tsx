@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import SendMode from './components/SendMode';
 import ReceiveMode from './components/ReceiveMode';
 import { cn } from './utils/cn';
-import { ScanLine, Send, Moon, Sun } from 'lucide-react';
+import { ScanLine, Send, Moon, Sun, Github } from 'lucide-react';
 import { AppMode } from './types';
 
 export default function App() {
@@ -21,11 +21,21 @@ export default function App() {
 
   return (
     <div className={cn("min-h-screen bg-[var(--lego-bg)] text-[var(--lego-text)] overflow-hidden relative transition-colors duration-300", isDark ? "dark" : "")}>
-      {/* Dark Mode Toggle */}
-      <div className="absolute top-4 right-4 z-50">
+      {/* Top Bar Controls */}
+      <div className="absolute top-4 right-4 z-50 flex items-center gap-3">
+        <a
+          href="https://github.com/hasim2006/QR-Mesh"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on GitHub"
+          className="p-3 bg-[var(--lego-card)] border-4 border-[var(--lego-border)] shadow-[4px_4px_0px_var(--lego-border)] rounded-xl hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_var(--lego-border)] active:translate-y-1 active:shadow-none transition-all text-[var(--lego-text)] flex items-center justify-center"
+        >
+          <Github className="w-6 h-6" strokeWidth={2.5} />
+        </a>
         <button
           onClick={() => setIsDark(!isDark)}
           className="p-3 bg-[var(--lego-card)] border-4 border-[var(--lego-border)] shadow-[4px_4px_0px_var(--lego-border)] rounded-xl hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_var(--lego-border)] active:translate-y-1 active:shadow-none transition-all text-[var(--lego-text)]"
+          aria-label="Toggle dark mode"
         >
           {isDark ? <Sun className="w-6 h-6" strokeWidth={2.5}/> : <Moon className="w-6 h-6" strokeWidth={2.5}/>}
         </button>
@@ -55,7 +65,7 @@ export default function App() {
             </h1>
           </div>
           <p className="text-[var(--lego-muted)] font-medium text-center transition-colors duration-300">
-            Send images using only light. No internet needed!
+            Send images and audio using only light. Zero internet needed!
           </p>
           
           {/* Mode Toggle */}
@@ -93,8 +103,14 @@ export default function App() {
         </main>
         
         {/* Footer */}
-        <footer className="py-6 text-center text-sm font-bold text-[var(--lego-muted)] uppercase tracking-widest transition-colors duration-300">
-          <p>No internet • No servers</p>
+        <footer className="py-6 text-center text-xs font-bold text-[var(--lego-muted)] uppercase tracking-widest transition-colors duration-300 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <p>No internet &bull; No servers &bull; Air-Gapped</p>
+          <span className="hidden sm:inline">&bull;</span>
+          <div className="flex items-center gap-3">
+            <a href="https://qr-filemesh.netlify.app/" className="hover:underline text-[var(--lego-text)]">qr-filemesh.netlify.app</a>
+            <span>&bull;</span>
+            <a href="https://github.com/hasim2006/QR-Mesh" target="_blank" rel="noopener noreferrer" className="hover:underline text-[var(--lego-text)]">GitHub</a>
+          </div>
         </footer>
       </div>
     </div>
