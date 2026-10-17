@@ -1,136 +1,198 @@
-# 🧱 QRMesh
+# 🧱 QRMesh — Air-Gapped Optical Data Transfer
 
 <div align="center">
 
-![QRMesh Transmit](docs/images/qrmesh-transmit.png)
+<img src="docs/images/qrmesh-hero.png" alt="QRMesh Optical Data Transfer Dashboard" width="850" style="border-radius: 14px; border: 4px solid #2B2B2B; box-shadow: 6px 6px 0px #2B2B2B; margin-bottom: 24px;" />
 
-### **Send files and media using only light — No Internet, Bluetooth, or Wi-Fi required.**
+<br />
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-qr--filemesh.netlify.app-00A650?style=for-the-badge&logo=netlify&logoColor=white)](https://qr-filemesh.netlify.app/)
-[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-6.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Security](https://img.shields.io/badge/Air--Gapped-100%25%20Offline-FFD500?style=for-the-badge&logo=shield&logoColor=black)](#-air-gapped-security)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-qr--filemesh.netlify.app-00A650?style=for-the-badge&logo=netlify&logoColor=white)](https://qr-filemesh.netlify.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-hasim2006%2FQR--Mesh-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hasim2006/QR-Mesh)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)](LICENSE)
 
----
+<br />
 
-[**🌐 Explore Live Application**](https://qr-filemesh.netlify.app/) • [**✨ Features**](#-key-features) • [**⚙️ How It Works**](#-how-it-works) • [**🚀 Quick Start**](#-quick-start) • [**📐 Architecture**](#-architecture--data-pipeline)
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.2-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.1-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![pako](https://img.shields.io/badge/Compression-zlib%2Fdeflate-FF6B6B?style=flat-square)](https://github.com/nodeca/pako)
+[![jsQR](https://img.shields.io/badge/Optical_Scanner-jsQR-FFD500?style=flat-square&logoColor=black)](https://github.com/cozmo/jsQR)
+[![Air-Gapped](https://img.shields.io/badge/Security-100%25_Air--Gapped-green?style=flat-square)](#-air-gapped-security--use-cases)
+
+<p align="center">
+  <b>Transfer files and media between devices using ONLY LIGHT.</b><br/>
+  <i>Zero Wi-Fi. Zero Bluetooth. Zero Cellular. Zero Cables. Pure Visual Photons.</i>
+</p>
+
+### 🔗 Public Live URL: [https://qr-filemesh.netlify.app/](https://qr-filemesh.netlify.app/)
 
 </div>
 
 ---
 
-## 📖 Overview
+## ⚡ Quick Links & Navigation
 
-**QRMesh** is an experimental, air-gapped optical data transfer system built on top of modern web standards. It enables two devices (phones, tablets, laptops) to transfer files, images, and audio payloads **strictly through visual light**, eliminating the need for Internet access, local Wi-Fi networks, Bluetooth pairing, or intermediate servers.
-
-By converting binary file data into an optimized, compressed stream of cycling high-density QR codes (animated optical pipeline) and scanning them through a device camera in real-time, QRMesh creates a visual wireless bridge between air-gapped computers.
-
----
-
-## 📸 Screenshots & UI Showcase
-
-| 📡 Transmit Mode (Air-Gapped Optical Stream) | 📷 Scan Mode (Real-Time Camera Decoder) |
-|:---:|:---:|
-| ![Transmit Mode](docs/images/qrmesh-transmit.png) | ![Scan Mode](docs/images/qrmesh-scan.png) |
-
-| 🌓 Dark Mode (Lego Neobrutalism Aesthetics) |
-|:---:|
-| ![Dark Mode](docs/images/qrmesh-dark.png) |
+- [🌐 Live Web App](https://qr-filemesh.netlify.app/)
+- [📸 Application Screenshots & UI Showcase](#-application-screenshots--ui-showcase)
+- [🌟 What is QRMesh?](#-what-is-qrmesh)
+- [🔬 How It Works (Optical Air-Gap Pipeline)](#-how-it-works-optical-air-gap-pipeline)
+- [📦 Fountain Code Packetization & Compression](#-fountain-code-packetization--compression)
+- [📱 Device-to-Device Testing Walkthrough](#-device-to-device-testing-walkthrough)
+- [🛠️ Tech Stack & Architecture](#️-tech-stack--architecture)
+- [🚀 Local Setup & Installation](#-local-setup--installation)
+- [🛡️ Air-Gapped Security & Use Cases](#-air-gapped-security--use-cases)
+- [📄 License & Author](#-license--author)
 
 ---
 
-## ✨ Key Features
+## 📸 Application Screenshots & UI Showcase
 
-- **⚡ 100% Air-Gapped & Offline**: Zero network traffic. Data travels solely as photons between one screen and another device's camera.
-- **🖼️ Multi-Format Support**:
-  - **Images**: Automatically compressed, downscaled, and encoded into ultra-compact JPEG streams.
-  - **Audio**: Downsampled to 8kHz mono 8-bit PCM WAV streams using Web Audio API for fast visual acoustic transfer.
-- **📦 High-Efficiency Compression**: Utilizes **Zlib / DEFLATE** (`pako`) compression to shrink payload sizes before chunking.
-- **🔄 Out-of-Order Reassembly**: Chunks are tagged with sequence indexes and total count headers (`index|total|type|data`). The receiving camera captures frames in *any* arbitrary sequence without dropping data.
-- **🎛️ Dynamic FPS Control**: Adjust the transmission speed (1 to 10 FPS) to balance speed and camera scanning reliability.
-- **🛡️ Error Correction Level 'H'**: Built with Level H Reed-Solomon QR error correction to withstand glare, camera motion blur, and ambient lighting variations.
-- **🧱 Tactile LEGO Neobrutalism Theme**: Playful high-contrast design with tactile borders, responsive drop shadows, interactive stud grids, and complete Dark / Light theme support.
-- **🔒 Zero-Knowledge & Client-Side**: All decoding, compression, and rendering occur entirely in browser memory (`ArrayBuffer` & `Canvas`). No server storage or third-party telemetry.
+<div align="center">
+
+| 📡 Transmit Mode (Optical Stream) | 📷 Scan Mode (Real-Time Camera Decoder) |
+| :---: | :---: |
+| <img src="docs/images/qrmesh-transmit.png" alt="QRMesh Transmit Mode" width="440" style="border-radius: 10px; border: 3px solid #2B2B2B;" /> | <img src="docs/images/qrmesh-scan.png" alt="QRMesh Scan Mode" width="440" style="border-radius: 10px; border: 3px solid #2B2B2B;" /> |
+| *File compression, chunking & animated QR code player* | *Live camera viewfinder with real-time packet accumulator* |
+
+| 🌓 Light Mode (Tactile Lego Aesthetic) | 🌑 Dark Mode (Neobrutalism Contrast) |
+| :---: | :---: |
+| <img src="docs/images/qrmesh-hero.png" alt="QRMesh Light Mode" width="440" style="border-radius: 10px; border: 3px solid #2B2B2B;" /> | <img src="docs/images/qrmesh-dark.png" alt="QRMesh Dark Mode" width="440" style="border-radius: 10px; border: 3px solid #2B2B2B;" /> |
+| *High-contrast primary palette with interactive stud grid* | *Sleek dark theme optimized for low-light scanning* |
+
+</div>
 
 ---
 
-## 📐 Architecture & Data Pipeline
+## 🌟 What is QRMesh?
+
+**QRMesh** is an open-source, air-gapped optical data transmission application running 100% in the web browser. It transforms screens into **visual optical transmitters** and device cameras into **high-speed data receivers**.
+
+By converting files (photos, audio notes, text) into compressed binary payloads, splitting them into an animated loop of high-density QR codes (Fountain codes), and reading them with standard camera hardware, QRMesh creates a visual wireless bridge between physically disconnected computers.
+
+> **Why Optical Air-Gap?** Unlike radio frequency signals (Wi-Fi, Bluetooth, NFC), visual light cannot penetrate physical walls, cannot be intercepted by RF spectrum analyzers, and requires zero network handshakes or credentials.
+
+---
+
+## 🔬 How It Works (Optical Air-Gap Pipeline)
 
 ```mermaid
 flowchart TD
-    subgraph SENDER ["📡 Sender Device (Transmit Mode)"]
-        A[Original File: Image / Audio] --> B[Canvas Resize / Web Audio 8kHz PCM]
-        B --> C[Extract Binary Uint8Array]
-        C --> D["pako.deflate (Zlib Compression)"]
-        D --> E[Base64 Encoding]
-        E --> F["Chunking (~60 bytes/frame) + Metadata Header"]
-        F --> G[Dynamic QR Code Generator: Error Level H]
-        G --> H[Animated QR Screen Loop at X FPS]
+    subgraph SENDER["📱 Device A (Transmitter)"]
+        A1[User Selects File: Image / Audio] --> A2[Canvas Resize / Audio PCM Resample]
+        A2 --> A3[Extract Binary Uint8Array]
+        A3 --> A4["pako.deflate (Zlib Compression)"]
+        A4 --> A5["Base64 Chunking (~60 bytes/packet)"]
+        A5 --> A6["QR Code Generation (ECC Level H)"]
+        A6 --> A7["Screen Loops Animated QR Stream at 1-10 FPS"]
     end
 
-    subgraph OPTICAL ["💡 Visual Light Transfer (Air-Gap)"]
-        H -.->|Photons / Light| I[Camera Sensor]
-    end
+    A7 -. "Photons / Light across Air Gap" .-> B1
 
-    subgraph RECEIVER ["📷 Receiver Device (Scan Mode)"]
-        I --> J[Webcam Stream Video Frame]
-        J --> K["jsQR Real-Time Frame Detection"]
-        K --> L["Parse Header: index | total | type | chunk"]
-        L --> M[Unordered Chunk Bucket State]
-        M -->|All Chunks Captured| N["Reassemble & pako.inflate()"]
-        N --> O[Binary to Data URL Blob]
-        O --> P[Interactive Preview & Direct Download]
+    subgraph RECEIVER["📱 Device B (Receiver)"]
+        B1["Microphone / Camera Samples Video Frame"] --> B2["Offscreen Canvas Frame Extraction"]
+        B2 --> B3["jsQR Real-Time QR Detector"]
+        B3 --> B4["Header Parser: index | total | type | payload"]
+        B4 --> B5["Unordered Chunk Hashmap Deduplicator"]
+        B5 -->|All Chunks Captured| B6["pako.inflate() Decompression"]
+        B6 --> B7["Reconstruct Binary Blob"]
+        B7 --> B8["Interactive Preview & Instant Download!"]
     end
 ```
 
----
-
-## ⚙️ How It Works
-
-### 1. Transmission Phase (Sender)
-1. **File Ingestion**: The user uploads a photo or audio file.
-2. **Pre-Processing**:
-   - Images are normalized and scaled to a maximum bounded canvas resolution (`150x150`) at 20% JPEG quality.
-   - Audio is resampled via an `OfflineAudioContext` down to 8,000 Hz 8-bit mono PCM.
-3. **Deflate Compression**: Binary buffers are compressed using `pako.deflate`, drastically reducing the total byte footprint.
-4. **Packetization**: The compressed buffer is split into ~60-byte payload chunks with standard metadata:
-   ```text
-   <chunk_index>|<total_chunks>|<type_flag>|<base64_payload>
-   ```
-5. **Optical Loop**: The application loops through QR frames at a configurable frequency (default 3 FPS).
-
-### 2. Optical Reception Phase (Receiver)
-1. **Camera Feed**: Accesses the device camera using `navigator.mediaDevices.getUserMedia` (`facingMode: 'environment'`).
-2. **Frame Scanning**: Video frames are painted onto an offscreen canvas at high frequency, evaluated by `jsQR`.
-3. **De-duplication & Tracking**: Captured chunks are stored in a key-value map by index, ensuring duplicates are ignored and missed frames are captured on the next cycle.
-4. **Reassembly**: Once all `N` unique chunks are received, the stream is inflated via `pako.inflate` and reconstructed into a previewable data URL for instant download.
+### Transmission Pipeline:
+1. **Pre-Processing & Compression**:
+   - **Images**: Automatically resized on an off-screen canvas to bounded dimensions and compressed to compact JPEG.
+   - **Audio**: Downsampled via Web Audio API `OfflineAudioContext` to 8 kHz 8-bit mono PCM.
+   - **Binary Deflate**: Compressed using Zlib DEFLATE via `pako` to reduce total payload bytes.
+2. **Packet Framing**:
+   - Split into uniform ~60-byte chunks with header format: `<chunk_index>|<total_chunks>|<type>|<base64_data>`.
+3. **Animated Visual Loop**:
+   - High-density QR codes generated with Level H Reed-Solomon error correction and cycled at user-selected FPS (1–10 FPS).
+4. **Camera Capture & Reconstruction**:
+   - Receiving device's camera captures frames in *any* arbitrary sequence. Missed frames are automatically picked up on the next cycle!
+   - Once all unique chunks are collected, `pako.inflate` reconstructs the original file instantly.
 
 ---
 
-## 🛠️ Technology Stack
+## 📦 Fountain Code Packetization & Compression
 
-| Technology | Purpose |
-|:---|:---|
-| **[React 19](https://react.dev/)** | Reactive UI and component lifecycle management |
-| **[TypeScript](https://www.typescriptlang.org/)** | Type safety across binary buffers and state pipelines |
-| **[Vite 6](https://vitejs.dev/)** | Ultra-fast build tool and development server |
-| **[Tailwind CSS v4](https://tailwindcss.com/)** | Neobrutalist design tokens and dark mode styling |
-| **[jsQR](https://github.com/cozmo/jsQR)** | High-performance, pure JavaScript QR code scanner |
-| **[qrcode](https://github.com/soldair/node-qrcode)** | Canvas & data-URL QR code generator with Level H ECC |
-| **[pako](https://github.com/nodeca/pako)** | Fast zlib/DEFLATE compression and decompression |
-| **[Lucide React](https://lucide.dev/)** | Clean, accessible iconography |
-| **[Motion](https://motion.dev/)** | Fluid micro-animations and state transitions |
+Optical communication is inherently lossy due to camera frame drops and motion blur. QRMesh solves this using **unordered carousel packetization**:
+
+```plaintext
+Original File (e.g. Photo, 12 KB)
+               │
+               ▼  [pako.deflate]
+Compressed Buffer (3.2 KB)
+               │
+               ▼  [Chunking Engine]
+Packet Frame Format:
+┌───────┬───────┬──────┬──────────────────────────────┐
+│ Index │ Total │ Type │ Base64 Encoded Binary Chunk   │
+│  003  │  052  │ IMG  │ dGhpcyBpcyBhIHNhbXBsZSB...   │
+└───────┴───────┴──────┴──────────────────────────────┘
+               │
+               ▼
+[Receiver collects packets 1, 4, 2, 5... until 100% complete!]
+```
+
+- **Resilient to Dropped Frames:** The transmitter continuously loops all chunks. The receiver simply catches whichever frame is in view.
+- **Level H Error Correction:** Retains up to **30% redundancy** to handle glare, reflections, and hand jitter.
 
 ---
 
-## 🚀 Quick Start
+## 📱 Device-to-Device Testing Walkthrough
+
+Follow these steps to perform an optical air-gap file transfer:
+
+### 1. Open the Live Application on Two Separate Devices
+Open **[https://qr-filemesh.netlify.app/](https://qr-filemesh.netlify.app/)** on:
+- **Device 1 (e.g., Laptop / Tablet / Phone A)**
+- **Device 2 (e.g., Smartphone / Laptop B)**
+
+> *Note:* HTTPS is required by mobile browsers to access camera feeds (`getUserMedia`). `qr-filemesh.netlify.app` is served over secure HTTPS.
+
+### 2. Configure Device 1 (Transmitter)
+1. On Device 1, click **TRANSMIT**.
+2. Select an image (or sample file) to transmit.
+3. Review the preview and chunk calculation (e.g. `18 chunks`).
+4. Set the transmission speed (default: **3–5 FPS**).
+5. Click **START TRANSMISSION** to begin the animated optical stream.
+
+### 3. Configure Device 2 (Receiver)
+1. On Device 2, click **SCAN**.
+2. Allow camera permissions when prompted.
+3. Click **START SCANNER**.
+4. Point Device 2's camera directly at Device 1's cycling QR screen.
+
+### 4. Experience the Transfer
+- Watch the progress bar advance in real time as chunks are collected.
+- As soon as 100% of packets are scanned, the original file is reassembled and displayed with a direct download button!
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+| Layer | Technologies | Role |
+| :--- | :--- | :--- |
+| **Frontend Framework** | [React 19](https://react.dev/) | High-performance reactive UI rendering |
+| **Language** | [TypeScript 5.8](https://www.typescriptlang.org/) | Type-safe binary buffers & state management |
+| **Build Tooling** | [Vite 6](https://vitejs.dev/) | Instant HMR and optimized asset bundling |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) | Tactile Lego Neobrutalism design system |
+| **Compression Engine** | [pako](https://github.com/nodeca/pako) | High-speed client-side Zlib/DEFLATE compression |
+| **QR Code Generator** | [node-qrcode](https://github.com/soldair/node-qrcode) | Canvas rendering with Level H error correction |
+| **Optical Scanner** | [jsQR](https://github.com/cozmo/jsQR) | Real-time JavaScript webcam frame decoder |
+| **Icons** | [Lucide React](https://lucide.dev/) | Clean, accessible vector icons |
+| **Animations** | [Motion](https://motion.dev/) | Smooth transitions & tactile button states |
+| **Deployment** | [Netlify](https://www.netlify.com/) | Edge cloud hosting & instant HTTPS |
+
+---
+
+## 🚀 Local Setup & Installation
 
 ### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm** or **bun** / **pnpm** / **yarn**
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- `npm`, `pnpm`, or `bun`
 
 ### 1. Clone the Repository
 ```bash
@@ -143,90 +205,42 @@ cd QR-Mesh
 npm install
 ```
 
-### 3. Start Development Server
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
-Open your browser at `http://localhost:3000` to run the app locally.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### 4. Build for Production
 ```bash
 npm run build
-```
-The compiled, production-ready static assets will be output to the `dist/` directory.
-
----
-
-## 📱 Testing Between Two Devices
-
-To test the full optical air-gap data transmission:
-
-1. Open **[https://qr-filemesh.netlify.app/](https://qr-filemesh.netlify.app/)** on **Device A** (e.g., your laptop or phone).
-2. Open the same link on **Device B** (e.g., a second phone or tablet).
-3. On **Device A**: Select **Transmit**, upload a picture, and click **Start Transmission**.
-4. On **Device B**: Select **Scan**, click **Start Scanner**, and point the camera at Device A's screen.
-5. Watch the real-time progress bar fill as the optical packets are captured. Once complete, the image or audio instantly renders for download!
-
-> **Camera Note**: Mobile browsers require an **HTTPS** context or `localhost` to grant camera permissions. Use the deployed Netlify URL for seamless mobile testing.
-
----
-
-## 📂 Project Structure
-
-```text
-QR-Mesh/
-├── docs/
-│   └── images/
-│       ├── qrmesh-transmit.png     # Transmit mode screenshot
-│       ├── qrmesh-scan.png         # Scan mode screenshot
-│       └── qrmesh-dark.png         # Dark mode screenshot
-├── public/                         # Static assets and icons
-├── src/
-│   ├── components/
-│   │   ├── SendMode.tsx            # File upload, chunking & QR stream player
-│   │   └── ReceiveMode.tsx         # Camera scanner, chunk accumulator & decoder
-│   ├── utils/
-│   │   ├── cn.ts                   # Class name merger helper
-│   │   └── dataUtils.ts            # Compression, PCM audio & chunking algorithms
-│   ├── App.tsx                     # Main layout & theme controller
-│   ├── index.css                   # Lego neobrutalism variables & styling
-│   ├── main.tsx                    # React application entrypoint
-│   └── types.ts                    # Global TypeScript interfaces
-├── index.html                      # HTML template
-├── netlify.toml                    # Netlify deployment configuration
-├── package.json                    # Project dependencies and scripts
-├── tsconfig.json                   # TypeScript compiler configuration
-├── vite.config.ts                  # Vite build settings
-└── README.md                       # Documentation
+npm run preview
 ```
 
 ---
 
-## 🔒 Air-Gapped Security & Use Cases
+## 🛡️ Air-Gapped Security & Use Cases
 
-- **Secure Facilities**: Transmit authentication tokens, credentials, or diagrams in high-security, network-isolated environments where USB drives and wireless signals are restricted.
-- **Emergency / Field Operations**: Peer-to-peer data sharing during network blackouts, disasters, or remote locations without cellular reception.
-- **Zero-Footprint Communication**: Leave no logs on routers, DNS servers, cell towers, or cloud providers.
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](https://github.com/hasim2006/QR-Mesh/issues).
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- 🔒 **High-Security Facilities:** Transmit cryptographic seeds, private keys, or passwords to machines with disabled networking hardware.
+- 📴 **Disaster / Zero-Connectivity Zones:** Exchange maps, emergency guidelines, and medical images when cell towers and power grids are offline.
+- ⚡ **No Traces on Infrastructure:** Photons leave no logs on internet routers, ISPs, cellular masts, or remote servers.
+- 🚫 **Malware Containment:** Physical visual air gaps prevent automated worms or network-based exploits from propagating.
 
 ---
 
 ## 📄 License
 
-This project is open-source and available under the [Apache License 2.0](LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).
+
+---
 
 <div align="center">
-  <sub>Built with ❤️ using React, Vite, and Optical Light Streams</sub>
+
+<b>Developed with ❤️ by <a href="https://github.com/hasim2006">hasim2006</a></b><br/>
+<sub>Powered by Optical Light Streams, React 19, and Vite</sub>
+
+<br/><br/>
+
+[![Live Application](https://img.shields.io/badge/🚀_LAUNCH_LIVE_APPLICATION-qr--filemesh.netlify.app-00A650?style=for-the-badge&logo=netlify&logoColor=white)](https://qr-filemesh.netlify.app/)
+
 </div>
